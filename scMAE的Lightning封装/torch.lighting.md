@@ -60,7 +60,8 @@ model.learning_rate=new_lr
 
 $$b_{new} = b_{old} - \eta \cdot \nabla b$$
 
-![[Pasted image 20260414161657.png]]
+<img width="2285" height="1403" alt="image" src="https://github.com/user-attachments/assets/ed5f21e9-9fd3-414a-8e39-454e51e31c70" />
+
 
 **使用训练器调用fit()函数**，来优化b_final：
 fit()参数：模型、训练数据
@@ -102,6 +103,7 @@ trainer=L.Trainer(max_epoches=34,accelerator="auto",devices="auto")
 |**`setup(stage)`**|**每个 GPU 进程执行**|执行数据分割（Train/Val/Test）和状态初始化（如加载内存、拟合归一化器）。|
 |**`train_dataloader`**|训练循环开始前|返回用于训练的 `DataLoader` 实例。|
 |`val_dataloader`|验证循环开始前|返回用于验证的 `DataLoader` 实例。|
+
 train_dataloader:
 **工程解耦**：你无需在 `Trainer` 外部手动处理 `DataLoader`。只需将 `datamodule` 传给 `trainer.fit()`，Lightning 会自动调用这个函数。
 
